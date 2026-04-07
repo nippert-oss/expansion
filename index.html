@@ -3,618 +3,750 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>정총무 — 가맹점, 저희가 직접 늘려드립니다</title>
-<meta name="description" content="가맹 영업 전문 대행. 예비 점주 발굴부터 계약까지 정총무가 직접 합니다.">
-<meta property="og:title" content="가맹점, 저희가 직접 늘려드립니다">
-<meta property="og:description" content="박람회에서 뵈었던 정총무입니다. 가맹 영업 고민, 저희가 해결해드릴 수 있습니다.">
-<meta property="og:image" content="https://nippert-oss.github.io/service/og.png">
-<meta property="og:url" content="https://nippert-oss.github.io/sales">
-<meta property="og:locale" content="ko_KR">
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SBQZPXM5L4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-SBQZPXM5L4');
-</script>
+<title>정총무 — 프랜차이즈 가맹 확장 파트너</title>
+<meta name="description" content="가맹 영업 대행 · 점포 개발 · 인테리어 시공. 프랜차이즈 확장의 모든 것을 원스톱으로.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Noto+Serif+KR:wght@600;700;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&display=swap');
+
 :root {
-  --white: #ffffff;
-  --bg: #f8f7f4;
+  --white: #FFFFFF;
+  --bg: #FAFAF8;
+  --bg2: #F3F2EE;
   --black: #111111;
+  --text: #1A1A1A;
+  --sub: #555555;
+  --muted: #999999;
+  --border: #E8E6E1;
   --accent: #E84E1B;
-  --accent-soft: #fff0eb;
-  --gray: #777777;
-  --text: #1a1a1a;
-  --border: #e8e8e8;
+  --accent-light: #FFF4F0;
+  --accent-mid: #FFEAE2;
+  --deep: #1B1B1B;
 }
-* { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
 body {
-  font-family: 'Noto Sans KR', sans-serif;
-  background: var(--white);
-  color: var(--text);
-  overflow-x: hidden;
-  word-break: keep-all;
+  font-family: 'Noto Sans KR', -apple-system, sans-serif;
+  background: var(--white); color: var(--text);
+  overflow-x: hidden; word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+@media(min-width:768px){ .container { padding: 0 48px; } }
+@media(min-width:1080px){ .container { padding: 0 60px; } }
 
 /* NAV */
 nav {
-  position: fixed; top:0; left:0; right:0; z-index:200;
-  background: rgba(255,255,255,0.97);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  padding: 0 24px; height: 58px;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+  background: rgba(255,255,255,0.92); backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  height: 64px; transition: all 0.3s;
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto; height: 100%;
   display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px;
 }
-.nav-logo { font-family:'Noto Serif KR',serif; font-weight:900; font-size:18px; color:var(--black); }
-.nav-logo span { color:var(--accent); }
+@media(min-width:768px){ .nav-inner { padding: 0 48px; } }
+.nav-logo {
+  font-family: 'Noto Serif KR', serif; font-weight: 900; font-size: 20px;
+  color: var(--black); letter-spacing: -0.03em;
+}
+.nav-logo span { color: var(--accent); }
+.nav-links { display: none; gap: 32px; align-items: center; }
+@media(min-width:768px){ .nav-links { display: flex; } }
+.nav-links a {
+  font-size: 13px; font-weight: 500; color: var(--sub);
+  text-decoration: none; letter-spacing: -0.01em; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--black); }
+.nav-cta-wrap { display: flex; align-items: center; gap: 16px; }
+.nav-tel { font-size: 13px; font-weight: 600; color: var(--sub); text-decoration: none; display: none; }
+@media(min-width:768px){ .nav-tel { display: block; } }
 .nav-cta {
-  background: var(--accent); color: white;
-  text-decoration: none; font-size: 13px; font-weight: 700;
-  padding: 10px 18px; border-radius: 6px;
+  background: var(--black); color: white; text-decoration: none;
+  font-size: 13px; font-weight: 600; padding: 10px 22px; border-radius: 8px;
+  letter-spacing: -0.01em; transition: background 0.2s;
 }
+.nav-cta:hover { background: var(--accent); }
 
 /* HERO */
 .hero {
-  min-height: 100vh;
-  padding: 80px 24px 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: var(--white);
-  position: relative;
-  overflow: hidden;
+  padding: 140px 0 100px;
+  background: linear-gradient(180deg, var(--white) 0%, var(--bg) 100%);
+  position: relative; overflow: hidden;
 }
 .hero::after {
-  content: '';
-  position: absolute;
-  top: -100px; right: -100px;
-  width: 400px; height: 400px;
+  content: ''; position: absolute; top: -120px; right: -200px;
+  width: 600px; height: 600px; border-radius: 50%;
   background: radial-gradient(circle, rgba(232,78,27,0.06) 0%, transparent 70%);
   pointer-events: none;
 }
-
-.hero-meet {
+.hero .container { position: relative; z-index: 1; }
+.hero-kicker {
   display: inline-flex; align-items: center; gap: 8px;
-  background: var(--accent-soft);
-  border: 1px solid rgba(232,78,27,0.25);
-  color: var(--accent);
-  font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
-  padding: 7px 16px; border-radius: 100px;
-  margin-bottom: 28px;
+  background: var(--accent-light); border: 1px solid rgba(232,78,27,0.12);
+  padding: 8px 16px; border-radius: 100px;
+  font-size: 12px; font-weight: 600; color: var(--accent);
+  letter-spacing: 0.02em; margin-bottom: 28px;
 }
-.hero-meet::before {
-  content: '👋';
-  font-size: 14px;
+.hero-kicker .dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+  animation: pulse 2s infinite;
 }
-
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
 .hero-title {
-  font-family: 'Noto Serif KR', serif;
-  font-weight: 900;
-  font-size: clamp(32px, 6vw, 64px);
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-  color: var(--black);
-  margin-bottom: 10px;
+  font-family: 'Noto Serif KR', serif; font-weight: 900;
+  font-size: clamp(32px, 6.5vw, 62px); line-height: 1.22;
+  letter-spacing: -0.04em; color: var(--black);
+  margin-bottom: 24px; max-width: 680px;
 }
-.hero-title .line2 {
+.hero-title .hl {
   color: var(--accent);
+  background: linear-gradient(transparent 65%, var(--accent-mid) 65%);
 }
-
-.hero-sub-title {
-  font-family: 'Noto Serif KR', serif;
-  font-weight: 700;
-  font-size: clamp(18px, 3vw, 28px);
-  color: var(--black);
-  opacity: 0.5;
-  margin-bottom: 28px;
-  letter-spacing: -0.02em;
-}
-
 .hero-desc {
-  font-size: 15px; font-weight: 300; line-height: 1.9;
-  color: var(--gray); margin-bottom: 36px;
-  max-width: 480px;
+  font-size: clamp(15px, 2vw, 17px); font-weight: 400; line-height: 1.95;
+  color: var(--sub); max-width: 520px; margin-bottom: 40px;
 }
+.hero-desc strong { font-weight: 600; color: var(--text); }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.btn-primary {
+  background: var(--accent); color: white; text-decoration: none;
+  font-size: 15px; font-weight: 700; padding: 17px 36px; border-radius: 12px;
+  display: inline-flex; align-items: center; gap: 8px;
+  box-shadow: 0 4px 24px rgba(232,78,27,0.2), 0 1px 3px rgba(232,78,27,0.1);
+  transition: all 0.25s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(232,78,27,0.28); }
+.btn-outline {
+  color: var(--text); text-decoration: none;
+  font-size: 15px; font-weight: 500; padding: 17px 28px; border-radius: 12px;
+  border: 1.5px solid var(--border); transition: all 0.2s;
+}
+.btn-outline:hover { border-color: var(--black); }
+.hero-stats {
+  display: grid; grid-template-columns: repeat(3, auto); gap: 0;
+  margin-top: 64px; padding-top: 40px;
+  border-top: 1px solid var(--border); max-width: 520px;
+}
+.h-stat { padding-right: 40px; }
+.h-stat:last-child { padding-right: 0; }
+.h-stat-num {
+  font-family: 'Playfair Display', serif; font-weight: 800;
+  font-size: 36px; color: var(--black); line-height: 1; letter-spacing: -0.02em;
+}
+.h-stat-num .unit { font-family: 'Noto Sans KR', sans-serif; font-size: 14px; font-weight: 700; color: var(--accent); }
+.h-stat-label { font-size: 12px; font-weight: 400; color: var(--muted); margin-top: 6px; }
 
-.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-.btn-main {
-  background: var(--accent); color: white;
-  text-decoration: none; font-size: 15px; font-weight: 700;
-  padding: 16px 32px; border-radius: 8px; display: inline-block;
-  letter-spacing: 0.02em;
-}
-.btn-sub {
-  color: var(--black); text-decoration: none;
-  font-size: 14px; font-weight: 500;
-  padding: 16px 22px;
-  border: 1.5px solid var(--border); border-radius: 8px; display: inline-block;
-}
-
-/* PAIN SECTION */
-.pain-section { background: var(--black); padding: 72px 24px; }
-.pain-section .section-label { color: var(--accent); }
-.pain-section .section-title { color: white; }
-.pain-section .section-desc { color: rgba(255,255,255,0.45); }
-
-.pain-cards {
-  margin-top: 36px;
-  display: flex; flex-direction: column; gap: 14px;
-}
-.pain-card {
-  padding: 22px 24px;
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 12px;
-  background: rgba(255,255,255,0.03);
-  display: flex; gap: 16px; align-items: flex-start;
-}
-.pain-num {
-  font-family: 'Noto Serif KR', serif;
-  font-size: 28px; font-weight: 900;
-  color: rgba(232,78,27,0.25);
-  line-height: 1; flex-shrink: 0;
-  margin-top: 2px;
-}
-.pain-card h4 {
-  font-size: 15px; font-weight: 700; color: white;
-  margin-bottom: 6px; line-height: 1.4;
-}
-.pain-card p {
-  font-size: 12px; font-weight: 300;
-  color: rgba(255,255,255,0.4); line-height: 1.8;
-}
-
-/* SECTION COMMON */
-section { padding: 72px 24px; }
-.section-label {
+/* SECTIONS */
+.sec-eyebrow {
   font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
-  color: var(--accent); margin-bottom: 12px;
-  display: flex; align-items: center; gap: 10px;
+  color: var(--accent); margin-bottom: 16px; text-transform: uppercase;
 }
-.section-label::after {
-  content: ''; width: 32px; height: 1.5px;
-  background: var(--accent); display: block; flex-shrink: 0;
+.sec-heading {
+  font-family: 'Noto Serif KR', serif; font-weight: 900;
+  font-size: clamp(26px, 4.5vw, 42px); line-height: 1.3;
+  letter-spacing: -0.03em; color: var(--black);
 }
-.section-title {
-  font-family: 'Noto Serif KR', serif;
-  font-size: clamp(24px, 5vw, 38px);
-  font-weight: 900; line-height: 1.25;
-  letter-spacing: -0.02em; color: var(--black);
-}
-.section-desc {
-  margin-top: 12px; font-size: 14px;
-  font-weight: 300; line-height: 1.9; color: var(--gray);
+.sec-sub {
+  margin-top: 14px; font-size: 15px; font-weight: 400;
+  line-height: 1.9; color: var(--sub); max-width: 480px;
 }
 
-/* HOW WE WORK */
-.how-section { background: var(--bg); }
-.how-steps {
-  margin-top: 40px;
-  display: flex; flex-direction: column; gap: 0;
+/* PAIN */
+.pain { padding: 120px 0; background: var(--white); }
+.pain-grid { margin-top: 48px; display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media(min-width:768px){ .pain-grid { grid-template-columns: 1fr 1fr; gap: 20px; } }
+.pain-card {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 16px; padding: 28px 24px;
+  transition: all 0.25s; position: relative; overflow: hidden;
 }
-.how-step {
-  display: flex; gap: 20px; align-items: flex-start;
-  padding: 24px 0; border-bottom: 1px solid var(--border);
+.pain-card::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%;
+  background: var(--accent); border-radius: 3px 0 0 3px; opacity: 0; transition: opacity 0.25s;
 }
-.how-step:first-child { border-top: 1px solid var(--border); }
-.step-circle {
-  width: 44px; height: 44px; border-radius: 50%;
-  background: var(--accent); color: white;
+.pain-card:hover { border-color: rgba(232,78,27,0.2); background: var(--accent-light); }
+.pain-card:hover::before { opacity: 1; }
+.pain-card .q {
+  font-size: 15px; font-weight: 700; color: var(--black); line-height: 1.55;
+  margin-bottom: 10px; display: flex; gap: 10px;
+}
+.pain-card .q::before {
+  content: '\201C'; font-family: 'Playfair Display', serif; font-size: 28px;
+  color: var(--accent); line-height: 1; flex-shrink: 0; margin-top: -4px;
+}
+.pain-card .a {
+  font-size: 13px; font-weight: 400; color: var(--sub); line-height: 1.85; padding-left: 38px;
+}
+
+/* SOLUTION INTRO */
+.solution-intro {
+  padding: 100px 0; background: var(--deep); color: white;
+  position: relative; overflow: hidden;
+}
+.solution-intro::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 20% 50%, rgba(232,78,27,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(232,78,27,0.05) 0%, transparent 50%);
+}
+.solution-intro .container { position: relative; z-index: 1; }
+.sol-kicker { font-size: 11px; font-weight: 700; letter-spacing: 0.25em; color: var(--accent); margin-bottom: 20px; }
+.sol-title {
+  font-family: 'Noto Serif KR', serif; font-weight: 900;
+  font-size: clamp(26px, 5vw, 46px); line-height: 1.3;
+  letter-spacing: -0.03em; color: white; max-width: 600px;
+}
+.sol-title .hl { color: var(--accent); }
+.sol-desc { margin-top: 16px; font-size: 15px; font-weight: 300; line-height: 2; color: rgba(255,255,255,0.55); max-width: 480px; }
+.sol-pillars { margin-top: 56px; display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media(min-width:768px){ .sol-pillars { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+.sol-pillar {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 32px 24px; transition: all 0.3s; position: relative;
+}
+.sol-pillar:first-child { border-color: rgba(232,78,27,0.3); background: rgba(232,78,27,0.06); }
+.sol-pillar:first-child .pillar-badge { display: inline-block; }
+.pillar-badge {
+  display: none; background: var(--accent); color: white;
+  font-size: 9px; font-weight: 700; letter-spacing: 0.15em;
+  padding: 4px 10px; border-radius: 4px; margin-bottom: 16px;
+}
+.pillar-num {
+  font-family: 'Playfair Display', serif; font-size: 48px;
+  font-weight: 800; color: rgba(255,255,255,0.06); line-height: 1; margin-bottom: 16px;
+}
+.sol-pillar:first-child .pillar-num { color: rgba(232,78,27,0.2); }
+.sol-pillar h3 { font-size: 18px; font-weight: 800; color: white; margin-bottom: 10px; letter-spacing: -0.02em; }
+.sol-pillar p { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.85; }
+.pillar-tags { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+.ptag {
+  font-size: 10px; font-weight: 600; padding: 5px 10px; border-radius: 5px;
+  background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5);
+}
+.sol-pillar:first-child .ptag { background: rgba(232,78,27,0.12); color: var(--accent); }
+.pillar-price {
+  margin-top: 20px; padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+.sol-pillar:first-child .pillar-price { border-color: rgba(232,78,27,0.15); }
+.pp-val { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: white; }
+.sol-pillar:first-child .pp-val { color: var(--accent); }
+.pp-unit { font-size: 11px; font-weight: 400; color: rgba(255,255,255,0.35); }
+
+/* DEEP DIVE */
+.deep-dive { padding: 120px 0; background: var(--white); }
+.dd-layout { margin-top: 48px; }
+@media(min-width:768px){ .dd-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; } }
+.dd-right { margin-top: 40px; }
+@media(min-width:768px){ .dd-right { margin-top: 0; } }
+.dd-item { display: flex; gap: 16px; align-items: flex-start; padding: 24px 0; border-bottom: 1px solid var(--border); }
+.dd-item:first-child { padding-top: 0; }
+.dd-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: var(--accent-light); display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.dd-item h4 { font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 6px; letter-spacing: -0.01em; }
+.dd-item p { font-size: 13px; font-weight: 400; color: var(--sub); line-height: 1.85; }
+.dd-highlight {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 20px; padding: 36px 28px;
+}
+.dd-highlight .tag {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.15em; color: var(--accent);
+  background: var(--accent-light); padding: 6px 12px; border-radius: 6px; margin-bottom: 16px;
+}
+.dd-highlight h3 {
+  font-family: 'Noto Serif KR', serif; font-weight: 900;
+  font-size: 22px; line-height: 1.4; letter-spacing: -0.02em;
+  color: var(--black); margin-bottom: 20px;
+}
+.dd-checks { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.dd-checks li {
+  display: flex; gap: 12px; align-items: flex-start;
+  font-size: 14px; font-weight: 400; color: var(--sub); line-height: 1.7;
+}
+.dd-checks li::before {
+  content: '\2713'; flex-shrink: 0; width: 24px; height: 24px;
   display: flex; align-items: center; justify-content: center;
-  font-weight: 900; font-size: 15px; flex-shrink: 0;
-  font-family: 'Noto Serif KR', serif;
+  background: var(--accent); color: white; border-radius: 50%;
+  font-size: 11px; font-weight: 700; margin-top: 1px;
 }
-.how-step h4 { font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 5px; }
-.how-step p { font-size: 13px; font-weight: 300; color: var(--gray); line-height: 1.8; }
+.dd-price-banner {
+  margin-top: 28px; background: var(--accent); border-radius: 14px;
+  padding: 24px 28px; display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 12px;
+}
+.dpb-left .dpb-amount {
+  font-family: 'Playfair Display', serif; font-weight: 800;
+  font-size: 32px; color: white; line-height: 1;
+}
+.dpb-left .dpb-unit { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+.dpb-badge {
+  background: white; color: var(--accent);
+  font-size: 13px; font-weight: 700; padding: 10px 20px; border-radius: 10px;
+}
+
+/* PROCESS */
+.process { padding: 120px 0; background: var(--bg); }
+.proc-track { margin-top: 56px; display: grid; grid-template-columns: 1fr; gap: 0; }
+@media(min-width:768px){ .proc-track { grid-template-columns: repeat(5, 1fr); gap: 0; } }
+.proc-step {
+  padding: 24px 0; border-bottom: 1px solid var(--border);
+  display: flex; gap: 18px; align-items: flex-start;
+}
+@media(min-width:768px){
+  .proc-step {
+    flex-direction: column; align-items: center; text-align: center;
+    padding: 0 12px; border-bottom: none; gap: 0; position: relative;
+  }
+  .proc-step::before {
+    content: ''; position: absolute; top: 26px; left: 50%; right: -50%;
+    height: 2px; background: var(--border);
+  }
+  .proc-step:last-child::before { display: none; }
+}
+.proc-num {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--white); border: 2px solid var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; position: relative; z-index: 1;
+  font-family: 'Playfair Display', serif; font-weight: 800;
+  font-size: 18px; color: var(--accent);
+}
+@media(min-width:768px){ .proc-num { margin-bottom: 20px; } }
+.proc-step h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; margin-top: 6px; }
+.proc-step p { font-size: 12px; font-weight: 400; color: var(--muted); line-height: 1.7; }
+@media(min-width:768px){ .proc-step h4 { margin-top: 0; } }
+
+/* TRUST */
+.trust { padding: 120px 0; background: var(--white); }
+.trust-grid { margin-top: 48px; display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media(min-width:768px){ .trust-grid { grid-template-columns: repeat(3, 1fr); } }
+.trust-card {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 16px; padding: 32px 24px; transition: all 0.25s;
+}
+.trust-card:hover { border-color: rgba(232,78,27,0.2); }
+.tc-icon {
+  width: 48px; height: 48px; border-radius: 14px;
+  background: var(--accent-light); display: flex; align-items: center; justify-content: center;
+  font-size: 22px; margin-bottom: 20px;
+}
+.trust-card h3 { font-size: 16px; font-weight: 800; color: var(--black); margin-bottom: 10px; letter-spacing: -0.02em; }
+.trust-card p { font-size: 13px; font-weight: 400; color: var(--sub); line-height: 1.9; }
 
 /* PROOF */
-.proof-section { background: var(--white); }
-.proof-grid {
-  margin-top: 36px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+.proof { padding: 100px 0; background: var(--bg); }
+.proof-header { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; }
+.proof-stat { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 64px; color: var(--accent); line-height: 1; }
+.proof-stat-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+.brands-flow { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+.bf-chip {
+  font-size: 13px; font-weight: 500; color: var(--sub);
+  background: var(--white); border: 1px solid var(--border);
+  padding: 10px 18px; border-radius: 8px; transition: all 0.2s;
 }
-.proof-card {
-  background: var(--bg);
-  border-radius: 12px; padding: 24px 20px;
-  border: 1.5px solid var(--border);
-}
-.proof-card .proof-num {
-  font-family: 'Noto Serif KR', serif;
-  font-size: 40px; font-weight: 900;
-  color: var(--accent); line-height: 1; margin-bottom: 6px;
-}
-.proof-card h4 { font-size: 13px; font-weight: 700; color: var(--black); margin-bottom: 4px; }
-.proof-card p { font-size: 11px; font-weight: 300; color: var(--gray); line-height: 1.7; }
+.bf-chip:hover { border-color: var(--accent); color: var(--accent); }
+.proof-note { margin-top: 24px; font-size: 13px; color: var(--muted); line-height: 1.8; }
+.proof-note strong { color: var(--accent); font-weight: 700; }
 
-/* DIFFERENCE */
-.diff-section { background: var(--bg); }
-.diff-list { margin-top: 36px; display: flex; flex-direction: column; gap: 14px; }
-.diff-item {
-  background: var(--white); border-radius: 12px;
-  padding: 22px 20px; border: 1.5px solid var(--border);
-  display: flex; gap: 14px; align-items: flex-start;
+/* FAQ */
+.faq { padding: 120px 0; background: var(--white); }
+.faq-list { margin-top: 48px; max-width: 720px; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q {
+  font-size: 15px; font-weight: 600; color: var(--black);
+  padding: 22px 0; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  transition: color 0.2s; line-height: 1.5;
 }
-.diff-icon {
-  width: 40px; height: 40px; border-radius: 10px;
-  background: var(--accent-soft); display: flex;
-  align-items: center; justify-content: center;
-  font-size: 18px; flex-shrink: 0;
+.faq-q:hover { color: var(--accent); }
+.faq-arrow {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--bg); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all 0.3s; font-size: 16px; color: var(--sub);
 }
-.diff-item h4 { font-size: 14px; font-weight: 700; color: var(--black); margin-bottom: 5px; }
-.diff-item p { font-size: 12px; font-weight: 300; color: var(--gray); line-height: 1.8; }
-
-/* BRANDS */
-.brands-section { background: var(--white); }
-.brands-label-row {
-  display: flex; justify-content: space-between;
-  align-items: flex-end; margin-bottom: 28px; flex-wrap: wrap; gap: 12px;
-}
-.brands-count {
-  font-family: 'Noto Serif KR', serif;
-  font-size: 52px; font-weight: 900; color: var(--accent); line-height: 1;
-}
-.brands-count-sub { font-size: 12px; font-weight: 300; color: var(--gray); margin-top: 4px; }
-.brands-grid {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  border-top: 1px solid var(--border); border-left: 1px solid var(--border);
-}
-.brand-cell {
-  border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
-  padding: 14px 8px; display: flex; align-items: center;
-  justify-content: center; text-align: center; transition: background 0.15s;
-}
-.brand-cell:hover { background: var(--accent); }
-.brand-cell:hover .brand-name { color: white; }
-.brand-name { font-size: 11px; font-weight: 700; color: var(--text); line-height: 1.3; }
-.brands-note {
-  margin-top: 20px; font-size: 12px; font-weight: 300;
-  color: var(--gray); text-align: center; line-height: 1.8;
-}
-.brands-note strong { color: var(--accent); font-weight: 700; }
+.faq-item.open .faq-arrow { background: var(--accent); color: white; transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.faq-a-inner { padding: 0 0 22px; font-size: 14px; font-weight: 400; color: var(--sub); line-height: 1.9; }
 
 /* CTA */
-.cta-section {
-  background: var(--accent); padding: 80px 24px; text-align: center;
+.cta {
+  padding: 100px 0; text-align: center; position: relative; overflow: hidden;
+  background: var(--deep);
 }
-.cta-section .section-label { color: rgba(255,255,255,0.6); justify-content: center; }
-.cta-section .section-label::after { background: rgba(255,255,255,0.4); }
-.cta-title {
-  font-family: 'Noto Serif KR', serif;
-  font-size: clamp(26px, 6vw, 48px); font-weight: 900;
-  color: white; line-height: 1.25; letter-spacing: -0.02em; margin-top: 14px;
+.cta::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(232,78,27,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(232,78,27,0.06) 0%, transparent 50%);
 }
-.cta-sub { margin-top: 14px; font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.8); line-height: 1.9; }
-.cta-meet-note {
-  display: inline-block; margin-top: 20px;
-  background: rgba(255,255,255,0.15); border-radius: 8px;
-  padding: 12px 20px; font-size: 13px; color: rgba(255,255,255,0.9); font-weight: 500;
+.cta .container { position: relative; z-index: 1; }
+.cta-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.25em; color: var(--accent); margin-bottom: 20px; }
+.cta-heading {
+  font-family: 'Noto Serif KR', serif; font-weight: 900;
+  font-size: clamp(28px, 5.5vw, 50px); line-height: 1.3;
+  letter-spacing: -0.03em; color: white; margin-bottom: 16px;
 }
-.cta-buttons {
-  margin-top: 32px; display: flex; flex-direction: column;
-  gap: 10px; align-items: center;
+.cta-desc { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.9; margin-bottom: 40px; }
+.cta-btns { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+@media(min-width:768px){ .cta-btns { flex-direction: row; justify-content: center; } }
+.cta-btn-main {
+  background: var(--accent); color: white; text-decoration: none;
+  font-size: 16px; font-weight: 700; padding: 18px 40px; border-radius: 12px;
+  box-shadow: 0 4px 32px rgba(232,78,27,0.3); transition: all 0.25s;
 }
-.btn-white {
-  background: white; color: var(--accent); text-decoration: none;
-  font-size: 15px; font-weight: 700; padding: 16px 36px;
-  border-radius: 8px; display: inline-block; width: 100%; max-width: 300px; text-align: center;
+.cta-btn-main:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(232,78,27,0.4); }
+.cta-btn-sub {
+  color: white; text-decoration: none;
+  font-size: 15px; font-weight: 500; padding: 18px 32px; border-radius: 12px;
+  border: 1.5px solid rgba(255,255,255,0.15); transition: border-color 0.2s;
 }
-.btn-kakao {
-  background: #FEE500; color: #3C1E1E; text-decoration: none;
-  font-size: 15px; font-weight: 700; padding: 16px 36px;
-  border-radius: 8px; display: inline-block; width: 100%; max-width: 300px; text-align: center;
-}
+.cta-btn-sub:hover { border-color: rgba(255,255,255,0.4); }
+.cta-trust-row { margin-top: 48px; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
+.cta-trust-num { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 28px; color: var(--accent); }
+.cta-trust-label { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 4px; text-align: center; }
 
 /* FOOTER */
-footer { background: var(--black); padding: 32px 24px; }
-.footer-logo { font-family:'Noto Serif KR',serif; font-size:16px; font-weight:900; color:white; margin-bottom:10px; }
-.footer-logo span { color:var(--accent); }
-.footer-info { font-size:11px; color:rgba(255,255,255,0.3); line-height:1.9; }
+footer {
+  background: var(--deep); border-top: 1px solid rgba(255,255,255,0.05); padding: 36px 0;
+}
+.footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+@media(min-width:768px){ .footer-inner { padding: 0 48px; display: flex; justify-content: space-between; align-items: center; } }
+.f-logo { font-family: 'Noto Serif KR', serif; font-weight: 900; font-size: 17px; color: white; margin-bottom: 10px; }
+@media(min-width:768px){ .f-logo { margin-bottom: 0; } }
+.f-logo span { color: var(--accent); }
+.f-info { font-size: 11px; color: rgba(255,255,255,0.25); line-height: 1.9; }
+@media(min-width:768px){ .f-info { text-align: right; } }
 
 /* FLOAT */
 .float-kakao {
   position: fixed; bottom: 28px; right: 24px; z-index: 999;
   background: #FEE500; color: #3C1E1E;
   display: flex; align-items: center; gap: 8px;
-  padding: 13px 20px; border-radius: 50px;
-  text-decoration: none; font-size: 13px; font-weight: 700;
-  font-family: 'Noto Sans KR', sans-serif;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  padding: 14px 22px; border-radius: 50px; text-decoration: none;
+  font-size: 13px; font-weight: 700;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.08);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .float-kakao svg { fill: #3C1E1E; flex-shrink: 0; }
-.float-kakao:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.22); }
+.float-kakao:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.18); }
+@media(max-width:768px){ .float-kakao span { display: none; } .float-kakao { padding: 14px; border-radius: 50%; } }
 
-/* DESKTOP */
-@media(min-width:768px){
-  nav { padding: 0 60px; }
-  .hero { padding: 100px 60px 80px; }
-  section { padding: 100px 60px; }
-  .pain-section { padding: 100px 60px; }
-  .pain-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .how-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
-  .how-step { border-top: 1px solid var(--border); }
-  .proof-grid { grid-template-columns: repeat(4,1fr); }
-  .diff-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .brands-grid { grid-template-columns: repeat(5,1fr); }
-  .brand-cell { padding: 16px 10px; }
-  .brand-name { font-size: 13px; }
-  .cta-buttons { flex-direction: row; justify-content: center; }
-  .btn-white, .btn-kakao { width: auto; max-width: none; }
-  footer { display: flex; justify-content: space-between; align-items: center; padding: 36px 60px; }
-  .footer-logo { margin-bottom: 0; }
-  .footer-info { text-align: right; }
-  @media(max-width:768px){
-    .float-kakao span { display: none; }
-    .float-kakao { padding: 14px; border-radius: 50%; }
-  }
+/* ANIM */
+.fade-up {
+  opacity: 0; transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
 }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">정총무<span>.</span></div>
-  <a href="#contact" class="nav-cta">미팅 신청하기</a>
+  <div class="nav-inner">
+    <div class="nav-logo">정총무<span>.</span></div>
+    <div class="nav-links">
+      <a href="#pain">문제 인식</a>
+      <a href="#services">서비스</a>
+      <a href="#franchise-sales">가맹 영업</a>
+      <a href="#partners">파트너</a>
+    </div>
+    <div class="nav-cta-wrap">
+      <a href="tel:01024610912" class="nav-tel">010-2461-0912</a>
+      <a href="#contact" class="nav-cta">상담 신청</a>
+    </div>
+  </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
-  <div class="hero-meet">박람회에서 뵈었던 정총무입니다</div>
-  <h1 class="hero-title">
-    가맹점,<br>
-    <span class="line2">저희가 직접 늘려드립니다.</span>
-  </h1>
-  <p class="hero-sub-title">영업팀 없어도 괜찮습니다.</p>
-  <p class="hero-desc">
-    예비 점주 발굴부터 상담, 계약 성사까지.<br>
-    정총무가 대표님 브랜드의 영업팀이 되어드립니다.<br>
-    결과 없이 비용 청구하지 않습니다.
-  </p>
-  <div class="hero-actions">
-    <a href="#contact" class="btn-main">지금 미팅 신청하기</a>
-    <a href="#how" class="btn-sub">어떻게 하는지 보기 →</a>
+  <div class="container">
+    <div class="hero-kicker"><span class="dot"></span> 프랜차이즈 확장 전문 파트너</div>
+    <h1 class="hero-title fade-up">
+      맛있는 건 자신 있는데,<br>
+      <span class="hl">가맹점은 왜 안 늘까요?</span>
+    </h1>
+    <p class="hero-desc fade-up">
+      <strong>음식만 잘하면 알아서 될 줄 알았습니다.</strong><br>
+      그런데 현실은, 영업도 모르고, 마케팅에선 바가지 쓰고,<br>
+      주변 대표한테 물어보기도 애매합니다.<br><br>
+      정총무는 그 자리에서 시작합니다.<br>
+      가맹 영업부터 점포, 시공까지 — 하나의 팀이 끝까지.
+    </p>
+    <div class="hero-btns fade-up">
+      <a href="#contact" class="btn-primary">무료 상담 신청 →</a>
+      <a href="#services" class="btn-outline">서비스 구조 보기</a>
+    </div>
+    <div class="hero-stats fade-up">
+      <div class="h-stat"><div class="h-stat-num">40<span class="unit">+</span></div><div class="h-stat-label">파트너 브랜드</div></div>
+      <div class="h-stat"><div class="h-stat-num">3<span class="unit">in1</span></div><div class="h-stat-label">원스톱 실행</div></div>
+      <div class="h-stat"><div class="h-stat-num">0<span class="unit">원</span></div><div class="h-stat-label">성과 전 비용</div></div>
+    </div>
   </div>
 </div>
 
-<!-- PAIN -->
-<section class="pain-section">
-  <div class="section-label">THE PROBLEM</div>
-  <h2 class="section-title">가맹 영업,<br>이런 상황 아닌가요?</h2>
-  <p class="section-desc">박람회에서 만난 대표님들이 가장 많이 하시는 말씀입니다.</p>
-  <div class="pain-cards">
-    <div class="pain-card">
-      <div class="pain-num">01</div>
-      <div>
-        <h4>"영업할 사람이 없어요"</h4>
-        <p>대표가 직접 상담까지 다 받고 있습니다. 확장하고 싶어도 시간이 없습니다.</p>
+<section class="pain" id="pain">
+  <div class="container">
+    <div class="sec-eyebrow fade-up">PROBLEM</div>
+    <h2 class="sec-heading fade-up">혹시 이런 상황,<br>지금 대표님 이야기 아닌가요?</h2>
+    <p class="sec-sub fade-up">프랜차이즈를 시작한 건 자신 있는 메뉴가 있어서였습니다.<br>그런데 확장은 전혀 다른 이야기더군요.</p>
+    <div class="pain-grid">
+      <div class="pain-card fade-up">
+        <div class="q">음식만 맛있으면 되는 줄 알았는데, 아무도 안 찾아와요</div>
+        <div class="a">좋은 메뉴는 필요조건이지 충분조건이 아닙니다. 가맹 확장은 메뉴력이 아니라 시스템과 영업력의 문제입니다.</div>
       </div>
-    </div>
-    <div class="pain-card">
-      <div class="pain-num">02</div>
-      <div>
-        <h4>"문의는 오는데 계약이 안 돼요"</h4>
-        <p>관심은 있는데 계약까지 연결하는 과정에서 자꾸 끊깁니다.</p>
+      <div class="pain-card fade-up">
+        <div class="q">마케팅 업체에 돈 쓰면 가맹 문의 올 줄 알았어요</div>
+        <div class="a">광고비만 수백 쓰고 문의는 냉장고 팔겠다는 전화뿐. 프랜차이즈 가맹 영업은 일반 마케팅과 완전히 다른 영역입니다.</div>
       </div>
-    </div>
-    <div class="pain-card">
-      <div class="pain-num">03</div>
-      <div>
-        <h4>"영업대행사 썼다가 돈만 날렸어요"</h4>
-        <p>계약금만 받고 결과 없이 연락이 끊기는 경우를 너무 많이 봤습니다.</p>
+      <div class="pain-card fade-up">
+        <div class="q">다른 프랜차이즈 대표한테 물어보고 싶은데 쉽지 않아요</div>
+        <div class="a">경쟁사에겐 물을 수 없고, 잘되는 브랜드는 바쁩니다. 혼자서 시행착오를 반복하는 구간이 가장 위험합니다.</div>
       </div>
-    </div>
-    <div class="pain-card">
-      <div class="pain-num">04</div>
-      <div>
-        <h4>"우리 브랜드가 좋은데 알려지질 않아요"</h4>
-        <p>제품/서비스 자신 있는데 영업 채널이 없어서 확장이 안 됩니다.</p>
+      <div class="pain-card fade-up">
+        <div class="q">매장 5개까지는 내가 했는데, 더는 체력이 안 돼요</div>
+        <div class="a">영업 직원을 뽑자니 고정비가 무섭고, 대행을 맡기자니 선불만 받고 사라진 곳이 한둘이 아닙니다.</div>
+      </div>
+      <div class="pain-card fade-up">
+        <div class="q">가맹 상담은 오는데, 계약으로 이어지질 않아요</div>
+        <div class="a">문의에서 상담, 설명, 클로징까지의 영업 프로세스가 없으면 리드는 전부 새어나갑니다.</div>
+      </div>
+      <div class="pain-card fade-up">
+        <div class="q">계약은 됐는데 점포, 시공을 또 따로 알아봐야 하나요?</div>
+        <div class="a">영업 따로, 부동산 따로, 인테리어 따로. 세 곳을 관리하면 대표님이 프로젝트 매니저가 됩니다.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HOW WE WORK -->
-<section class="how-section" id="how">
-  <div class="section-label">HOW WE WORK</div>
-  <h2 class="section-title">정총무는<br>이렇게 합니다</h2>
-  <p class="section-desc">전화 한 통 주시면 이 순서대로 진행됩니다.</p>
-  <div class="how-steps">
-    <div class="how-step">
-      <div class="step-circle">1</div>
-      <div>
-        <h4>브랜드 파악 미팅</h4>
-        <p>가맹 조건, 타겟 점주, 상권 기준을 파악합니다. 30분이면 충분합니다.</p>
+<section class="solution-intro" id="services">
+  <div class="container">
+    <div class="sol-kicker fade-up">OUR SOLUTION</div>
+    <h2 class="sol-title fade-up">정총무는 <span class="hl">세 가지를</span><br><span class="hl">하나의 팀</span>으로 해결합니다.</h2>
+    <p class="sol-desc fade-up">가맹 영업을 중심으로, 점포 개발과 인테리어까지 이어지는 구조.<br>따로 맡기면 생기는 빈틈을, 한 팀이 메웁니다.</p>
+    <div class="sol-pillars fade-up">
+      <div class="sol-pillar">
+        <div class="pillar-badge">CORE SERVICE</div>
+        <div class="pillar-num">01</div>
+        <h3>가맹 영업 대행</h3>
+        <p>예비 창업자 발굴부터 가맹 상담, 브랜드 설명, 계약 클로징까지. 대표님이 영업에 쓰던 시간을 통째로 돌려드립니다.</p>
+        <div class="pillar-tags"><span class="ptag">점주 발굴</span><span class="ptag">상담 대행</span><span class="ptag">계약 클로징</span><span class="ptag">성과 기반</span></div>
+        <div class="pillar-price"><div class="pp-val">300–500만</div><div class="pp-unit">건당 성사 기준</div></div>
       </div>
-    </div>
-    <div class="how-step">
-      <div class="step-circle">2</div>
-      <div>
-        <h4>예비 점주 발굴</h4>
-        <p>저희 네트워크와 채널로 관심 있는 예비 창업자를 찾아냅니다.</p>
+      <div class="sol-pillar">
+        <div class="pillar-num">02</div>
+        <h3>점포 개발</h3>
+        <p>상권 분석, 후보 점포 발굴, 임대 협상, 계약 체결까지. 공인 중개사 자격 보유로 법적 책임까지 직접 집니다.</p>
+        <div class="pillar-tags"><span class="ptag">상권 분석</span><span class="ptag">점포 소개</span><span class="ptag">중개사 자격</span></div>
+        <div class="pillar-price"><div class="pp-val">200–300만</div><div class="pp-unit">중개수수료 외 별도</div></div>
       </div>
-    </div>
-    <div class="how-step">
-      <div class="step-circle">3</div>
-      <div>
-        <h4>1:1 상담 진행</h4>
-        <p>예비 점주와 직접 상담합니다. 대표님은 검토만 하시면 됩니다.</p>
-      </div>
-    </div>
-    <div class="how-step">
-      <div class="step-circle">4</div>
-      <div>
-        <h4>계약 성사 → 수수료</h4>
-        <p>계약이 성사되면 수수료를 받습니다. 결과 없이 비용 청구 없습니다.</p>
+      <div class="sol-pillar">
+        <div class="pillar-num">03</div>
+        <h3>인테리어 시공</h3>
+        <p>자체 시공팀이 현장을 직접 맡습니다. 외주 없이 진행하기 때문에 브랜드 CI 기준 그대로 품질과 일정을 보장합니다.</p>
+        <div class="pillar-tags"><span class="ptag">자체 시공팀</span><span class="ptag">CI 준수</span><span class="ptag">품질 보장</span></div>
+        <div class="pillar-price"><div class="pp-val">현장 견적</div><div class="pp-unit">규모에 따라</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROOF -->
-<section class="proof-section">
-  <div class="section-label">WHY US</div>
-  <h2 class="section-title">저희를 선택하는 이유</h2>
-  <p class="section-desc">말이 아닌 구조와 실적으로 증명합니다.</p>
-  <div class="proof-grid">
-    <div class="proof-card">
-      <div class="proof-num">40+</div>
-      <h4>파트너 브랜드</h4>
-      <p>다양한 업종 프랜차이즈와 직접 일해왔습니다</p>
-    </div>
-    <div class="proof-card">
-      <div class="proof-num">10회</div>
-      <h4>박람회 참가</h4>
-      <p>현장에서 직접 발로 뛰며 쌓은 네트워크입니다</p>
-    </div>
-    <div class="proof-card">
-      <div class="proof-num">성과</div>
-      <h4>기반 계약</h4>
-      <p>계약 성사 시에만 수수료. 리스크 없이 시작하세요</p>
-    </div>
-    <div class="proof-card">
-      <div class="proof-num">직접</div>
-      <h4>운영 경험</h4>
-      <p>프랜차이즈를 직접 운영해봤기에 본사 입장을 압니다</p>
-    </div>
-  </div>
-</section>
-
-<!-- DIFFERENCE -->
-<section class="diff-section">
-  <div class="section-label">DIFFERENCE</div>
-  <h2 class="section-title">다른 영업대행사와<br>무엇이 다른가요</h2>
-  <div class="diff-list">
-    <div class="diff-item">
-      <div class="diff-icon">💰</div>
-      <div>
-        <h4>성과 기반 수수료</h4>
-        <p>계약 성사 시에만 300~500만원. 결과 없으면 청구하지 않습니다. 선불 계약금 없습니다.</p>
+<section class="deep-dive" id="franchise-sales">
+  <div class="container">
+    <div class="sec-eyebrow fade-up">CORE SERVICE — 가맹 영업 대행</div>
+    <h2 class="sec-heading fade-up">대표님은 브랜드에 집중하세요.<br>가맹 확장은 저희 일입니다.</h2>
+    <p class="sec-sub fade-up">단순히 전화 돌리는 영업이 아닙니다.<br>진짜 창업 의향이 있는 점주를 발굴하고, 계약까지 만듭니다.</p>
+    <div class="dd-layout">
+      <div class="dd-left">
+        <div class="dd-item fade-up">
+          <div class="dd-icon">🎯</div>
+          <div><h4>예비 점주 타겟 발굴</h4><p>자체 DB와 현장 네트워크를 통해 실제 창업 의향이 있는 예비 점주만 선별합니다. 허수 리드에 시간 낭비하지 않습니다.</p></div>
+        </div>
+        <div class="dd-item fade-up">
+          <div class="dd-icon">💬</div>
+          <div><h4>브랜드 설명 & 상담 대행</h4><p>브랜드의 비전과 수익 구조를 대표님 대신 설명합니다. 창업자의 궁금증을 현장 경험으로 해소합니다.</p></div>
+        </div>
+        <div class="dd-item fade-up">
+          <div class="dd-icon">📝</div>
+          <div><h4>계약 클로징</h4><p>관심에서 멈추지 않습니다. 가맹 계약서에 도장이 찍히는 순간까지가 저희 업무 범위입니다.</p></div>
+        </div>
+        <div class="dd-item fade-up">
+          <div class="dd-icon">📊</div>
+          <div><h4>주간 리포트 & 파이프라인 공유</h4><p>상담 현황, 리드 상태, 계약 진행률을 매주 투명하게 공유합니다. 블랙박스 없는 영업.</p></div>
+        </div>
       </div>
-    </div>
-    <div class="diff-item">
-      <div class="diff-icon">🏙️</div>
-      <div>
-        <h4>점포까지 연결</h4>
-        <p>영업만 하고 끝나지 않습니다. 자리 찾기, 계약까지 이어집니다. 중개사 자격 보유.</p>
-      </div>
-    </div>
-    <div class="diff-item">
-      <div class="diff-icon">🔨</div>
-      <div>
-        <h4>인테리어까지 원스톱</h4>
-        <p>영업 → 점포 → 시공까지 한 팀이 합니다. 브랜드 기준 그대로 오픈까지.</p>
-      </div>
-    </div>
-    <div class="diff-item">
-      <div class="diff-icon">🤝</div>
-      <div>
-        <h4>박람회에서 직접 만난 인연</h4>
-        <p>저희는 이미 얼굴을 아는 사이입니다. 믿고 시작할 수 있는 관계에서 출발합니다.</p>
+      <div class="dd-right">
+        <div class="dd-highlight fade-up">
+          <div class="tag">WHY DIFFERENT</div>
+          <h3>왜 정총무의 가맹 영업은<br>결과가 다른가요?</h3>
+          <ul class="dd-checks">
+            <li>프랜차이즈를 직접 운영해본 팀이 영업합니다</li>
+            <li>성과 기반 — 계약이 성사돼야 비용이 발생합니다</li>
+            <li>영업 이후 점포·시공까지 연결되는 원스톱 구조</li>
+            <li>영업 과정 전체를 주간 리포트로 투명하게 공유</li>
+            <li>브랜드를 이해한 사람이 설명해야 점주가 믿습니다</li>
+          </ul>
+          <div class="dd-price-banner">
+            <div class="dpb-left"><div class="dpb-amount">300–500만</div><div class="dpb-unit">건당 · 가맹 계약 성사 기준</div></div>
+            <div class="dpb-badge">성과 없으면 0원</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BRANDS -->
-<section class="brands-section" id="references">
-  <div class="brands-label-row">
-    <div>
-      <div class="section-label">REFERENCES</div>
-      <h2 class="section-title">함께한 브랜드들</h2>
-      <p class="section-desc">업종 불문, 다양한 프랜차이즈와 함께해왔습니다.</p>
-    </div>
-    <div>
-      <div class="brands-count">40+</div>
-      <div class="brands-count-sub">파트너 브랜드</div>
+<section class="process">
+  <div class="container">
+    <div class="sec-eyebrow fade-up">PROCESS</div>
+    <h2 class="sec-heading fade-up">전화 한 통에서 오픈까지,<br>5단계로 끝냅니다.</h2>
+    <div class="proc-track">
+      <div class="proc-step fade-up"><div class="proc-num">1</div><div><h4>미팅 & 브리핑</h4><p>브랜드 현황·목표를 파악합니다</p></div></div>
+      <div class="proc-step fade-up"><div class="proc-num">2</div><div><h4>가맹 영업 착수</h4><p>예비 점주 발굴 및 상담 시작</p></div></div>
+      <div class="proc-step fade-up"><div class="proc-num">3</div><div><h4>점포 발굴</h4><p>상권 분석 후 최적 점포 소개</p></div></div>
+      <div class="proc-step fade-up"><div class="proc-num">4</div><div><h4>인테리어 시공</h4><p>자체팀이 브랜드 기준으로 완성</p></div></div>
+      <div class="proc-step fade-up"><div class="proc-num">5</div><div><h4>오픈 완료</h4><p>가맹점 오픈까지 끝까지 책임</p></div></div>
     </div>
   </div>
-  <div class="brands-grid">
-    <div class="brand-cell"><span class="brand-name">그레이피플</span></div>
-    <div class="brand-cell"><span class="brand-name">바나타이거</span></div>
-    <div class="brand-cell"><span class="brand-name">셀렉토</span></div>
-    <div class="brand-cell"><span class="brand-name">밥풀릭스</span></div>
-    <div class="brand-cell"><span class="brand-name">맛찜</span></div>
-    <div class="brand-cell"><span class="brand-name">옐레드</span></div>
-    <div class="brand-cell"><span class="brand-name">짱탁구장</span></div>
-    <div class="brand-cell"><span class="brand-name">우규</span></div>
-    <div class="brand-cell"><span class="brand-name">아담만두</span></div>
-    <div class="brand-cell"><span class="brand-name">명성가</span></div>
-    <div class="brand-cell"><span class="brand-name">맛찜랭킹</span></div>
-    <div class="brand-cell"><span class="brand-name">소낙스</span></div>
-    <div class="brand-cell"><span class="brand-name">팔각도</span></div>
-    <div class="brand-cell"><span class="brand-name">호텔런드리</span></div>
-    <div class="brand-cell"><span class="brand-name">명백집</span></div>
-    <div class="brand-cell"><span class="brand-name">뭉텅</span></div>
-    <div class="brand-cell"><span class="brand-name">닭장맥주</span></div>
-    <div class="brand-cell"><span class="brand-name">손정보쌈</span></div>
-    <div class="brand-cell"><span class="brand-name">프레드피자</span></div>
-    <div class="brand-cell"><span class="brand-name">미아리우동집</span></div>
-    <div class="brand-cell"><span class="brand-name">깻떡</span></div>
-    <div class="brand-cell"><span class="brand-name">금싸빠</span></div>
-    <div class="brand-cell"><span class="brand-name">압구정화로구이</span></div>
-    <div class="brand-cell"><span class="brand-name">로칼</span></div>
-    <div class="brand-cell"><span class="brand-name">와요커피</span></div>
-    <div class="brand-cell"><span class="brand-name">메카폰</span></div>
-    <div class="brand-cell"><span class="brand-name">싸다김밥</span></div>
-    <div class="brand-cell"><span class="brand-name">온미정</span></div>
-    <div class="brand-cell"><span class="brand-name">한사리감자탕</span></div>
-    <div class="brand-cell"><span class="brand-name">마니달오</span></div>
-    <div class="brand-cell"><span class="brand-name">에이플러스짐</span></div>
-    <div class="brand-cell"><span class="brand-name">육오랑</span></div>
-    <div class="brand-cell"><span class="brand-name">원카츠</span></div>
-    <div class="brand-cell"><span class="brand-name">다이닝숲</span></div>
-    <div class="brand-cell"><span class="brand-name">조마루감자탕</span></div>
-    <div class="brand-cell"><span class="brand-name">연남동미용실</span></div>
-    <div class="brand-cell"><span class="brand-name">조교동감자탕</span></div>
-    <div class="brand-cell"><span class="brand-name">홍이집</span></div>
-    <div class="brand-cell"><span class="brand-name">팔도밥상</span></div>
-    <div class="brand-cell"><span class="brand-name">얌샘김밥</span></div>
-  </div>
-  <p class="brands-note"><strong>상세 계약 실적 · 시공 사례</strong>는 미팅 시 직접 공유해 드립니다</p>
 </section>
 
-<!-- CTA -->
-<section class="cta-section" id="contact">
-  <div class="section-label">GET STARTED</div>
-  <h2 class="cta-title">박람회에서 나눈 대화,<br>이제 실행으로 이어갈게요.</h2>
-  <p class="cta-sub">
-    부담 없이 30분만 주세요.<br>
-    브랜드 상황 들어보고 가맹 영업 방향 잡아드리겠습니다.
-  </p>
-  <div class="cta-meet-note">☕ 커피 한 잔, 30분 미팅부터 시작합니다</div>
-  <div class="cta-buttons">
-    <a href="tel:01024610912" class="btn-white">📞 010-2461-0912</a>
-    <a href="https://open.kakao.com/o/syDEmKni" target="_blank" class="btn-kakao">💬 카카오로 미팅 신청</a>
+<section class="trust">
+  <div class="container">
+    <div class="sec-eyebrow fade-up">WHY JEONGTONGMU</div>
+    <h2 class="sec-heading fade-up">정총무를 선택하는 이유</h2>
+    <p class="sec-sub fade-up">직접 프랜차이즈를 운영해본 팀만이 줄 수 있는 신뢰가 있습니다.</p>
+    <div class="trust-grid">
+      <div class="trust-card fade-up"><div class="tc-icon">💰</div><h3>성과 기반 계약 구조</h3><p>선불 착수금 없이, 가맹 계약이 실제로 성사된 건에 대해서만 비용이 발생합니다. 결과 없이 비용만 청구하는 구조가 아닙니다.</p></div>
+      <div class="trust-card fade-up"><div class="tc-icon">🏪</div><h3>프랜차이즈 직접 운영 경험</h3><p>본사의 입장을 아는 이유는 직접 본사였기 때문입니다. 교과서가 아닌 현장의 언어로 이야기합니다.</p></div>
+      <div class="trust-card fade-up"><div class="tc-icon">📋</div><h3>공인 중개사 자격 보유</h3><p>점포 계약 시 법적 책임까지 직접 집니다. 구두 약속이 아닌 자격과 계약서로 신뢰를 보여드립니다.</p></div>
+      <div class="trust-card fade-up"><div class="tc-icon">🔨</div><h3>자체 시공팀 직영 운영</h3><p>외주 시공의 품질 편차를 원천 차단합니다. 일정도 마감도 흔들리지 않는 시공을 보장합니다.</p></div>
+      <div class="trust-card fade-up"><div class="tc-icon">🔗</div><h3>영업·점포·시공 일원화</h3><p>세 가지를 각각 맡기면 책임 소재가 흐려집니다. 한 팀이 전 과정을 담당해 빈틈이 없습니다.</p></div>
+      <div class="trust-card fade-up"><div class="tc-icon">📈</div><h3>투명한 과정 공유</h3><p>영업 현황, 리드 상태, 점포 후보, 시공 진행률까지 매주 리포트로 공유합니다. 블랙박스 없는 파트너십.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="proof" id="partners">
+  <div class="container">
+    <div class="proof-header fade-up">
+      <div>
+        <div class="sec-eyebrow">PARTNERS</div>
+        <h2 class="sec-heading">함께 성장한 브랜드들</h2>
+        <p class="sec-sub" style="margin-top:8px;">업종 불문, 다양한 프랜차이즈와 함께해왔습니다.</p>
+      </div>
+      <div style="text-align:right;"><div class="proof-stat">40+</div><div class="proof-stat-label">파트너 브랜드</div></div>
+    </div>
+    <div class="brands-flow fade-up">
+      <span class="bf-chip">그레이피플</span><span class="bf-chip">바나타이거</span><span class="bf-chip">셀렉토</span>
+      <span class="bf-chip">밥풀릭스</span><span class="bf-chip">맛찜</span><span class="bf-chip">옐레드</span>
+      <span class="bf-chip">짱탁구장</span><span class="bf-chip">우규</span><span class="bf-chip">아담만두</span>
+      <span class="bf-chip">명성가</span><span class="bf-chip">맛찜랭킹</span><span class="bf-chip">소낙스</span>
+      <span class="bf-chip">팔각도</span><span class="bf-chip">호텔런드리</span><span class="bf-chip">명백집</span>
+      <span class="bf-chip">뭉텅</span><span class="bf-chip">닭장맥주</span><span class="bf-chip">손정보쌈</span>
+      <span class="bf-chip">프레드피자</span><span class="bf-chip">미아리우동집</span><span class="bf-chip">깻떡</span>
+      <span class="bf-chip">금싸빠</span><span class="bf-chip">압구정화로구이</span><span class="bf-chip">로칼</span>
+      <span class="bf-chip">와요커피</span><span class="bf-chip">메카폰</span><span class="bf-chip">싸다김밥</span>
+      <span class="bf-chip">온미정</span><span class="bf-chip">한사리감자탕</span><span class="bf-chip">마니달오</span>
+      <span class="bf-chip">에이플러스짐</span><span class="bf-chip">육오랑</span><span class="bf-chip">원카츠</span>
+      <span class="bf-chip">다이닝숲</span><span class="bf-chip">조마루감자탕</span><span class="bf-chip">연남동미용실</span>
+      <span class="bf-chip">조교동감자탕</span><span class="bf-chip">홍이집</span><span class="bf-chip">팔도밥상</span>
+      <span class="bf-chip">얌샘김밥</span>
+    </div>
+    <p class="proof-note fade-up"><strong>시공 사례 · 계약 실적 · 상권 분석 보고서</strong>는 미팅 시 직접 공유해 드립니다.</p>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container">
+    <div class="sec-eyebrow fade-up">FAQ</div>
+    <h2 class="sec-heading fade-up">자주 묻는 질문</h2>
+    <div class="faq-list">
+      <div class="faq-item fade-up">
+        <div class="faq-q">가맹점이 아직 3개뿐인데 맡겨도 되나요?<div class="faq-arrow">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">오히려 초기 확장 단계에서 맡기시는 분이 가장 많습니다. 매장 수가 적을수록 대표님이 직접 영업까지 뛰시는 경우가 많은데, 그 시간을 브랜드 고도화와 기존 매장 관리에 투자하시는 게 훨씬 효율적입니다.</div></div>
+      </div>
+      <div class="faq-item fade-up">
+        <div class="faq-q">계약이 안 되면 정말 비용이 0원인가요?<div class="faq-arrow">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">네. 정총무는 철저하게 성과 기반 계약입니다. 가맹 계약이 실제로 성사됐을 때만 대행 비용이 발생합니다. 선불 계약금, 착수금, 월정액 같은 건 없습니다.</div></div>
+      </div>
+      <div class="faq-item fade-up">
+        <div class="faq-q">가맹 영업만 따로 맡길 수도 있나요?<div class="faq-arrow">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">물론입니다. 가맹 영업 대행만 단독으로 이용하셔도 됩니다. 다만 점포 개발과 인테리어까지 연결하시면 프로세스가 끊기지 않아 대표님이 신경 쓸 일이 크게 줄어듭니다.</div></div>
+      </div>
+      <div class="faq-item fade-up">
+        <div class="faq-q">마케팅 대행이랑 뭐가 다른 건가요?<div class="faq-arrow">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">마케팅 대행은 '노출'을 만들고, 저희는 '계약'을 만듭니다. 광고로 문의를 만드는 것과, 실제 예비 점주를 발굴해서 계약서까지 이끄는 것은 완전히 다른 업무입니다. 정총무는 후자에 집중합니다.</div></div>
+      </div>
+      <div class="faq-item fade-up">
+        <div class="faq-q">어떤 업종이든 가능한가요?<div class="faq-arrow">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">외식, 카페, 뷰티, 피트니스, 세탁, 교육 등 업종을 가리지 않고 진행해왔습니다. 40개 이상의 브랜드와 파트너십을 맺어온 경험이 있습니다. 미팅 시 유사 업종 레퍼런스를 공유해 드립니다.</div></div>
+      </div>
+      <div class="faq-item fade-up">
+        <div class="faq-q">첫 미팅은 어떻게 진행되나요?<div class="faq-arrow">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">전화나 카카오톡으로 간단히 브랜드 상황을 듣고, 이후 대면 또는 화상으로 구체적인 진행 방향을 잡습니다. 강요나 압박 없이 편하게 이야기 나누는 자리입니다.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="container">
+    <div class="cta-eyebrow fade-up">GET STARTED</div>
+    <h2 class="cta-heading fade-up">가맹점, 더 늘리고 싶으시죠?<br>전화 한 통이면 시작됩니다.</h2>
+    <p class="cta-desc fade-up">부담 없는 첫 미팅부터 시작합니다.<br>브랜드 상황만 알려주시면, 방법은 저희가 찾아드립니다.</p>
+    <div class="cta-btns fade-up">
+      <a href="tel:01024610912" class="cta-btn-main">📞 전화 상담</a>
+      <a href="https://open.kakao.com/o/syDEmKni" class="cta-btn-sub">💬 카카오톡 문의</a>
+    </div>
+    <div class="cta-trust-row fade-up">
+      <div><div class="cta-trust-num">40+</div><div class="cta-trust-label">파트너 브랜드</div></div>
+      <div><div class="cta-trust-num">0원</div><div class="cta-trust-label">성과 전 비용</div></div>
+      <div><div class="cta-trust-num">1팀</div><div class="cta-trust-label">끝까지 책임</div></div>
+    </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-logo">정총무<span>.</span></div>
-  <div class="footer-info">
-    경기도 남양주시 6063 6층 · 대표자 이웅민<br>
-    사업자등록번호 803-09-03113
+  <div class="footer-inner">
+    <div class="f-logo">정총무<span>.</span></div>
+    <div class="f-info">경기도 남양주시 6063 6층 · 대표자 이웅민<br>사업자등록번호 803-09-03113</div>
   </div>
 </footer>
 
-<!-- 플로팅 카카오 버튼 -->
 <a href="https://open.kakao.com/o/syDEmKni" target="_blank" class="float-kakao">
-  <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <svg width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M12 3C6.477 3 2 6.582 2 11c0 2.731 1.566 5.123 3.95 6.616L4.9 21l4.08-2.04C9.59 19.32 10.78 19.5 12 19.5c5.523 0 10-3.582 10-8S17.523 3 12 3z"/>
   </svg>
-  <span>카카오 미팅 신청</span>
+  <span>카카오 문의</span>
 </a>
 
 <script>
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var item=this.closest('.faq-item');
+    document.querySelectorAll('.faq-item').forEach(function(i){if(i!==item)i.classList.remove('open');});
+    item.classList.toggle('open');
+  });
+});
 document.querySelectorAll('a[href^="#"]').forEach(function(a){
   a.addEventListener('click',function(e){
     var t=document.querySelector(a.getAttribute('href'));
     if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
   });
 });
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');}});
+},{threshold:0.12});
+document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el);});
 </script>
 </body>
 </html>
